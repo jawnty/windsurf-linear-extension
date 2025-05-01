@@ -1,0 +1,84 @@
+{
+  "name": "windsurf-linear-extension",
+  "displayName": "Windsurf Linear Extension",
+  "description": "Windsurf Linear Extension ",
+  "version": "0.0.1",
+  "publisher": "JT",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "Linear",
+    "Windsurf"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "windsurf-linear-extension.fetchMyTeams",
+        "title": "Linear: Fetch My Teams"
+      },
+      {
+        "command": "windsurf-linear-extension.createIssue",
+        "title": "Linear: Create Issue"
+      },
+      {
+        "command": "windsurf-linear-extension.fetchMyIssues",
+        "title": "Linear: Fetch My Issues"
+      },
+      {
+        "command": "windsurf-linear-extension.updateIssue",
+        "title": "Linear: Update Issue"
+      },
+      {
+        "command": "windsurf-linear-extension.archiveIssue",
+        "title": "Linear: Archive Issue"
+      }
+    ],
+    "configuration": {
+      "title": "Windsurf Linear Extension",
+      "properties": {
+        "windsurf-linear-extension.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "Your personal Linear API Key. Generate one at https://linear.app/settings/api",
+          "scope": "machine-overridable"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.3.2",
+    "eslint": "^9.25.1",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "@linear/sdk": "^39.1.1",
+    "dotenv": "^16.5.0",
+    "encoding": "^0.1.13"
+  }
+}

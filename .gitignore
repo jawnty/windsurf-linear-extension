@@ -1,0 +1,12 @@
+out
+dist
+node_modules
+.vscode-test/
+.vscode/
+*.vsix
+
+# Runtime data
+*.log
+*.env
+
+# Build artifacts
