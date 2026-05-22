@@ -20,6 +20,9 @@
     "Linear",
     "Windsurf"
   ],
+  "activationEvents": [
+    "*"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -51,9 +54,33 @@
           "type": "string",
           "default": "",
           "description": "Your personal Linear API Key. Generate one at https://linear.app/settings/api",
-          "scope": "machine-overridable"
+          "scope": "window"
         }
       }
+    },
+    "cascade": {
+      "actions": [
+        {
+          "id": "windsurf-linear-extension.fetchMyTeams",
+          "description": "Fetch my teams from Linear"
+        },
+        {
+          "id": "windsurf-linear-extension.createIssue",
+          "description": "Create a new issue in Linear"
+        },
+        {
+          "id": "windsurf-linear-extension.fetchMyIssues",
+          "description": "Fetch my issues from Linear"
+        },
+        {
+          "id": "windsurf-linear-extension.updateIssue",
+          "description": "Update an existing issue in Linear"
+        },
+        {
+          "id": "windsurf-linear-extension.archiveIssue",
+          "description": "Archive an issue in Linear"
+        }
+      ]
     }
   },
   "scripts": {
